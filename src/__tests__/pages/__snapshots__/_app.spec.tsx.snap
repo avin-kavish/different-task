@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<_App /> should render unchanged 1`] = `"Test Render"`;
