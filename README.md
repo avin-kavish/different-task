@@ -25,7 +25,7 @@ yarn start
 
 ### Redux
 
-I don't believe redux is needed for this particular use case. Redux makes it easy to reason about complex changes in state that includes mutations. But there's no such here. There's only downloading and displaying data from an api. The `useSWR` hook from [zeit/swr](https://github.com/zeit/swr) is more than adequate. It's got states such as `loading`, and `errored` built in to it. It's just one line of code.
+I don't believe redux is needed for this particular use case. Redux makes it easy to reason about complex changes in state that includes mutations. But there's no such here. There's only downloading and displaying data from an api. The `useSWR` hook from [zeit/swr](https://swr.now.sh/) is more than adequate. It's got states such as `loading`, and `errored` built in to it. It's just one line of code.
 
 ```
 const { data, error, isValidating: isLoading } = useSWR('/leases', fetcher)
