@@ -4,8 +4,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from '../../state/store'
 import { loadLeaseDetails } from '../../state/features/lease-details'
 import { paymentScheduleSelector } from '../../state/features/lease-details/paymentScheduleSelector'
-import { LeasePaymentsTable } from '../../components/LeasePaymentsTable'
 import { format } from 'date-fns'
+import { LeasePaymentsTable } from '../../components'
 
 export default function LeaseDetailsPage() {
   const { query } = useRouter()
