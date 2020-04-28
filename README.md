@@ -2,7 +2,7 @@
 
 ```
 yarn
-yarn build
+yarn dev
 ```
 
 ## Testing
@@ -13,6 +13,13 @@ yarn build
    1. Open Cypress GUI with `yarn cy`
    2. Start server with `yarn dev`
    3. Run tests
+
+## Production
+
+```
+yarn build
+yarn start
+```
 
 ## Reflection
 
