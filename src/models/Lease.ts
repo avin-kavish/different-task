@@ -17,6 +17,7 @@ export class Lease implements LeaseSummary {
 
   endDate: Date
 
+  // Weekly Rent
   rent: number
 
   frequency: PaymentFrequency
@@ -38,7 +39,7 @@ export class Lease implements LeaseSummary {
   // This method is static because instance methods do not play well with
   // immutability libraries.
   static computePaymentSchedule(lease: Lease) {
-    const { startDate, endDate, paymentDay, frequency, rent } = lease
+    const { startDate, endDate, paymentDay, frequency } = lease
 
     let payment: Payment
     let nextDate: Date
@@ -89,14 +90,14 @@ function findNextPaymentDate(
 }
 
 function makePayment(from: Date, nextDate: Date, lease: Lease) {
-  const { endDate, frequency, rent } = lease
+  const { endDate, rent } = lease
 
   const to = isSameDate(nextDate, endDate)
     ? endDate
     : sub(nextDate, { days: 1 })
 
   const days = differenceInDays(to, from) + 1
-  const amount = (rent / frequencyInDays(frequency)) * days
+  const amount = (rent / 7) * days // Rent is always weekly
 
   return { from, to, days, amount }
 }
